@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+     header{
+        background-color: darkgray;
+     }
+    
+     .alert{
+           width:50%;
+           margin:20px auto;
+           padding:30px;
+           position:relative;
+           border-radius:5px;
+           box-shadow:0 0 15px 5px #ccc;
+         } 
+
+.close{
+  position:absolute;
+  width:30px;
+  height:30px;
+  opacity:0.5;
+  border-width:1px;
+  border-style:solid;
+  border-radius:50%;
+  right:15px;
+  top:25px;
+  text-align:center;
+  font-size:1.6em;
+  cursor:pointer;
+  color: black;
+}
+</style>
+<body>
+    <header>
+        <center>
+            <h1>Enter the Number..</h1>
+            <input width="450px" type="text" placeholder="Enter" required id="txt"><br><br>
+            <button onclick="amstrong()">Check</button>
+            <!-- <a class='close'>&times;</a> -->
+            
+            <p id="pp"></p><br><br>
+        </center>
+    </header>
+    <script>
+        function amstrong(){
+            var a=parseInt(document.getElementById("txt").value);
+            var sum=0;
+            var c=a;
+            while (a!=0) {
+                 var b=Math.floor(a%10);
+                 a=Math.floor(a/10);
+                 sum=sum+(b*b*b);
+              }
+             if (sum==c) {
+                var el=document.getElementById("pp")
+                    el.classList.add("alert")
+                    document.getElementById("pp").innerHTML=c+' is an Amstrong number..'
+               }
+               else{
+                var el=document.getElementById("pp")
+                    el.classList.add("alert")
+                var out ="<a class='close'>&times;</a>"
+                document.getElementById("pp").innerHTML=c+" is not an Amstrong number.."+out
+               }
+        } 
+    </script>
+</body>
+</html>
